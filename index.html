@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor</title>
+    <style>
+        /* Estilo del fondo y la página */
+        body {
+            background-color: #f8d1d1; /* Rosa pastel */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column; /* Los elementos estarán apilados */
+            text-align: center;
+        }
+
+        /* Contenedor principal con el mensaje "Te amo dulce" */
+        .main-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s;
+        }
+
+        .main-container p {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .heartSymbol {
+            font-size: 50px;
+            color: #ff3366;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* Segundo contenedor con el mensaje largo */
+        .secondary-container {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        .secondary-container p {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Contenedor principal con el mensaje "Te amo dulce" -->
+    <div class="main-container" id="main-container">
+        <p>Te amo dulce</p>
+        <!-- Corazón decorativo para activar el cambio -->
+        <span class="heartSymbol" id="heart">❤️</span>
+    </div>
+
+    <!-- Segundo contenedor con el mensaje largo -->
+    <div class="secondary-container" id="secondary-container">
+        <p>Mi caprichosa y renegona, te amo con todo mi corazón.</p>
+        <p>Aunque a veces te enojas y me haces saber lo que piensas, adoro cada parte de ti.</p>
+        <p>Pasaremos por momentos difíciles, pero los enfrentaremos juntos, porque sé que nuestra relación es fuerte.</p>
+        <p>Las cosas buenas también vendrán, y las disfrutaremos como nunca, riendo y viviendo cada día.</p>
+        <p>Porque estaré a tu lado, no solo en los días felices, sino también cuando las cosas se pongan difíciles.</p>
+        <p>No importa si a veces somos tercos, porque en el fondo, todo lo que quiero es verte sonreír.</p>
+        <p>Te prometo que estaré siempre allí, para apoyarte, para amarte, para ser tu compañero en cada paso.</p>
+    </div>
+
+    <script>
+        // Función para ocultar el contenedor principal y mostrar el contenedor con el mensaje largo
+        document.getElementById('heart').addEventListener('click', function() {
+            // Desaparece el contenedor principal
+            document.getElementById('main-container').style.opacity = 0;
+            
+            // Después de 0.5 segundos, cambiamos la visibilidad del contenedor secundario
+            setTimeout(function() {
+                document.getElementById('main-container').style.display = 'none'; // Lo oculta completamente
+                document.getElementById('secondary-container').style.display = 'block'; // Muestra el contenedor de los créditos
+            }, 500); // Esto coincide con el tiempo de animación para una transición suave
+        });
+    </script>
+</body>
+</html>
